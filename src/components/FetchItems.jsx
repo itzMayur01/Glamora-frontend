@@ -13,7 +13,7 @@ function FetchItems() {
     const controller = new AbortController();
     const signal = controller.signal;
     dispatch(fetchStatusActions.markFetchingStarted());
-    fetch("http://192.168.29.241:8080/items", { signal })
+    fetch("https://glamora-backend.onrender.com/items", { signal })
       .then((res) => res.json())
       .then(({ items }) => {
         dispatch(fetchStatusActions.markFetchDone());
